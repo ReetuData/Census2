@@ -20,7 +20,7 @@ class Census_data_processor:
     def generateOutput(self, dataDictionary):
         with open(self.outputFilePath, 'w') as file:
             writer = csv.writer(file)
-            for key, val in dataDictionary.items():
+            for key, val in sorted(dataDictionary.items()):
                 writer.writerow(val)
 
     def processCensusData(self):
