@@ -33,11 +33,11 @@ class Census_data_processor:
         areaCountDictionary = {}
         for l in dataList:
             if (l[0] not in areaCountDictionary):
-                areaCountDictionary[l[0]] = [l[0], "%s"%l[1], 1, float(l[2]), float(l[3]), float(l[4])]
+                areaCountDictionary[l[0]] = [l[0], "%s"%l[1], 1, int(l[2]), int(l[3]), float(l[4])]
             else:
                 areaCountDictionary[l[0]][2] = areaCountDictionary[l[0]][2] + 1;
-                areaCountDictionary[l[0]][3] = areaCountDictionary[l[0]][3] + float(l[2]);
-                areaCountDictionary[l[0]][4] = areaCountDictionary[l[0]][4] + float(l[3]);
+                areaCountDictionary[l[0]][3] = areaCountDictionary[l[0]][3] + int(l[2]);
+                areaCountDictionary[l[0]][4] = areaCountDictionary[l[0]][4] + int(l[3]);
                 areaCountDictionary[l[0]][5] = areaCountDictionary[l[0]][5] + self.tryfloat(l[4]);
 
         for key, val in areaCountDictionary.items():
